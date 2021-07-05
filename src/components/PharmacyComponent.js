@@ -1,14 +1,17 @@
 import React from 'react';
 import { Card, CardImg, CardImgOverlay, CardTitle } from 'reactstrap';
+import { Link } from 'react-router-dom';
 
 
 function RenderMedicationItem({medication}) {
     return (
         <Card >
+            <Link to={`/pharmacy/${medication.id}`}>
         <CardImg width="100%" src={medication.image} alt={medication.name} />
         <CardImgOverlay>
             <CardTitle>{medication.name}</CardTitle>
         </CardImgOverlay>
+        </Link>
     </Card>
     )
             

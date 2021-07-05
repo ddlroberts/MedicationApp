@@ -24,6 +24,14 @@ class Main extends Component {
      const HomePage = () => {
        return (
          <Home />
+       );
+     }
+
+     const MedicationWithId = ({match}) => {
+       return (
+         <MedicationInfo 
+           medication={this.state.medications.filter(medication => medication.id === +match.params.medicationId)[0]}
+         />
        )
      }
       return (
@@ -32,6 +40,8 @@ class Main extends Component {
               <Switch>
                 <Route path='/home' component={HomePage} />
                 <Route exact path='/pharmacy' render={() => <Pharmacy medications={this.state.medications} />} />
+                <Route path='/pharmacy/:medicationId' component={MedicationWithId} />
+                <Route exact path='/contact' component={Contact} />
                 <Redirect to='/home' />
               </Switch>
               <Footer />

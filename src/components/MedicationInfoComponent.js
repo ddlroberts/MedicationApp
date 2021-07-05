@@ -5,7 +5,7 @@ function RenderMedication({medication}) {
         return (
             <div className="col-md-5 m-1">
              <Card>
-                    <CardImg top src={medication.image} alt={medication.name} />
+                    <CardImg src={medication.image} alt={medication.name} />
                     <CardBody>
                         <CardTitle>{medication.name}</CardTitle>
                         <CardText>{medication.dosage}</CardText>
