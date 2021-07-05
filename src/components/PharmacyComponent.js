@@ -2,9 +2,9 @@ import React from 'react';
 import { Card, CardImg, CardImgOverlay, CardTitle } from 'reactstrap';
 
 
-function RenderMedicationItem({medication, onClick}) {
+function RenderMedicationItem({medication}) {
     return (
-        <Card onClick={() => onClick(medication.id)} >
+        <Card >
         <CardImg width="100%" src={medication.image} alt={medication.name} />
         <CardImgOverlay>
             <CardTitle>{medication.name}</CardTitle>
@@ -19,7 +19,7 @@ function Pharmacy(props) {
         const medication = props.medications.map(medication => {
             return (
               <div key={medication.id} className="col-md-5 m-1"> 
-                <RenderMedicationItem medication={medication} onClick={props.onClick} />
+                <RenderMedicationItem medication={medication} />
             </div>   
             );
         });

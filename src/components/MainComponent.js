@@ -4,6 +4,9 @@ import { MEDICATIONS } from '../shared/medicationlist';
 import { MedicationInfo} from './MedicationInfoComponent';
 import Header from './HeaderComponent';
 import Footer from './FooterComponent';
+import Home from './HomeComponent';
+import { Switch, Route, Redirect } from 'react-router-dom';
+import Contact from './ContactComponent';
 
 
 
@@ -12,24 +15,26 @@ class Main extends Component {
     super(props);
     this.state = {
       medications: MEDICATIONS,
-      selectedMedication: null
+      
     }
   }
 
-  onMedicationSelect(medicationId) {
-    this.setState({selectedMedication: medicationId})
-}
+ render() {
 
-  render() {
+     const HomePage = () => {
+       return (
+         <Home />
+       )
+     }
       return (
           <div>
-              <Navbar dark color="primary">
-              <div className="container">
-                  <NavbarBrand href="/">Medication Reminder</NavbarBrand>
-              </div>
-              </Navbar>
-              <Pharmacy medications={this.state.medications} onClick={medicationId => this.onMedicationSelect(medicationId)}/>
-              <MedicationInfo medication={this.state.medications.filter(medication => medication.id === this.state.selectedMedication)[0]}/>
+              <Header />
+              <Switch>
+                <Route path='/home' component={HomePage} />
+                <Route exact path='/pharmacy' render={() => <Pharmacy medications={this.state.medications} />} />
+                <Redirect to='/home' />
+              </Switch>
+              <Footer />
           </div>
       );
   }
