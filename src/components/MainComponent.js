@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import Pharmacy from './PharmacyComponent';
-import { Navbar, NavbarBrand } from 'reactstrap';
 import { MEDICATIONS } from '../shared/medicationlist';
 import { MedicationInfo} from './MedicationInfoComponent';
+import Header from './HeaderComponent';
+import Footer from './FooterComponent';
 
 
 
