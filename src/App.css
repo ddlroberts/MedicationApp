@@ -1,8 +1,8 @@
-body {
+body h4 {
   font-family: "Open Sans", sans-serif;
 }
 
-h1, h2, h3, .card-body>.card-title {
+h1, h2, h3 .card-body>.card-title {
   font-family: "Lobster", cursive;
 }
 
@@ -44,4 +44,9 @@ h2 {
 
 .navbar-dark {
   background-color: #901CAD;
+}
+
+.calendar {
+  font-family: "Lobster", cursive;
+  color: #3046C5;
 }

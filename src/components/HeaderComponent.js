@@ -46,7 +46,7 @@ class Header extends Component {
                                 </NavItem>
                                 <NavItem>
                                     <NavLink className="nav-link" to="/pharmacy">
-                                        <i className="fa fa-list fa-lg" /> My Pharmacy
+                                        <i className="fas fa-pills fa-lg" /> My Prescriptions
                                     </NavLink>
                                 </NavItem>
                                 <NavItem>
@@ -56,7 +56,7 @@ class Header extends Component {
                                 </NavItem>
                                 <NavItem>
                                     <NavLink className="nav-link" to="/contact">
-                                        <i className="fa fa-address-card fa-lg" /> Contact Doctor
+                                        <i className="fa fa-user-md fa-lg" /> Contact Doctor
                                     </NavLink>
                                 </NavItem>
                             </Nav>
