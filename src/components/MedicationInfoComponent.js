@@ -1,5 +1,6 @@
 import React from 'react';
-import { Card, CardImg, CardText, CardBody, CardTitle } from 'reactstrap';
+import { Card, CardImg, CardText, CardBody, CardTitle, Breadcrumb, BreadcrumbItem } from 'reactstrap';
+import { Link } from 'react-router-dom';
 
 function RenderMedication({medication}) {
         return (
@@ -20,6 +21,16 @@ function RenderMedication({medication}) {
     if (props.medication) {
         return ( 
             <div className="container">
+              <div className="row">
+                <div className="col">
+                <Breadcrumb>
+                          <BreadcrumbItem><Link to="/pharmacy">My Prescriptions</Link></BreadcrumbItem>
+                          <BreadcrumbItem active>{props.medication.name}</BreadcrumbItem>
+                </Breadcrumb>
+                    <h2>{props.medication.name}</h2>
+                    <hr />
+                </div>
+            </div>  
         <div className="row">
             <RenderMedication medication={props.medication} />
         </div>
